@@ -7,9 +7,9 @@ const Search = () => {
       <h3 className='d-flex mb-3'>
         <span>Find by Instrument</span>
       </h3>
-      <form class='card p-1'>
+      <form className='card p-1'>
         <div className='col'>
-          <label for='Brass' className='form-label'>
+          <label htmlFor='Brass' className='form-label'>
             Brass
           </label>
           <select className='form-select' id='brass'>
@@ -22,17 +22,17 @@ const Search = () => {
             <option value='tuba'>Tuba</option>
           </select>
 
-          <label for='Drums' className='form-label'>
+          <label htmlFor='Drums' className='form-label'>
             Drums
           </label>
-          <select class='form-select' id='drums'>
+          <select className='form-select' id='drums'>
             <option value=''></option>
             <option value='drumkit'>Drumkit</option>
             <option value='orchestralPercussion'>Orchestral Percussion</option>
             <option value='ethnicPercussion'>Ethnic Percussion</option>
           </select>
 
-          <label for='Strings' className='form-label'>
+          <label htmlFor='Strings' className='form-label'>
             Strings
           </label>
           <select className='form-select' id='strings'>
@@ -43,7 +43,7 @@ const Search = () => {
             <option value='violin'>Violin</option>
           </select>
 
-          <label for='Woodwinds' className='form-label'>
+          <label htmlFor='Woodwinds' className='form-label'>
             Woodwinds
           </label>
           <select className='form-select' id='woodwinds'>
@@ -57,7 +57,7 @@ const Search = () => {
           </select>
         </div>
         <hr className='my-4' />
-        <button class='w-40 submit' type='submit'>
+        <button className='w-40 submit' type='submit'>
           Submit
         </button>
       </form>

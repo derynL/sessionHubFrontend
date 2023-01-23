@@ -1,5 +1,6 @@
 import '../css/header.css';
 import logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <header>
         <nav className='navbar navbar-expand-lg navbar-light'>
           <div className='container-fluid'>
-            <a className='navbar-brand logo-heading' href='/'>
+            <Link className='navbar-brand logo-heading' to='/'>
               <img
                 src={logo}
                 alt='SessionHub Logo'
@@ -15,7 +16,7 @@ const Header = () => {
                 className='img-fluid d-inline-block align-text-middle'
               />
               SessionHub
-            </a>
+            </Link>
             <button
               className='navbar-toggler'
               type='button'
@@ -30,19 +31,24 @@ const Header = () => {
             <div className='collapse navbar-collapse' id='navbarText'>
               <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                 <li className='nav-item'>
-                  <a className='nav-link active' aria-current='page' href='/'>
+                  <Link className='nav-link active' aria-current='page' to='/'>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link' href='/'>
+                  <Link className='nav-link' to='/about'>
+                    About
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/get-started'>
                     Get Started
-                  </a>
+                  </Link>
                 </li>
                 <li className='nav-item'>
-                  <a className='nav-link' href='/'>
+                  <Link className='nav-link' to='/session-talk'>
                     SessionTalk
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <span className='navbar-text'>
