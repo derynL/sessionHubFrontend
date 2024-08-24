@@ -1,0 +1,16 @@
+.circle {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: rgb(255 255 255);
+  border-radius: 9999px;
+}
+.gradient {
+  background-image: linear-gradient(
+    to top,
+    #ad1aec 0%,
+    #810cb4 35%,
+    #6108a4 60%,
+    #530697 85%,
+    #38016c 100%
+  );
+}
