@@ -14,3 +14,18 @@
     #38016c 100%
   );
 }
+.titleGradient {
+  background-image: linear-gradient(
+    to top,
+    #b2d4fd 0%,
+    #81b9fe 35%,
+    #55a1fe 60%,
+    #2e8bfd 85%,
+    #0071ff 100%
+  );
+  display: inline-block;
+  color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+  line-height: 60px;
+}
