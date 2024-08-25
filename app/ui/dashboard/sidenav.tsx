@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NavLinks from '@/app/ui/dashboard/nav-links';
-import TradeHubLogo from '@/app/ui/tradehub-logo';
+import TradeHubLogo from '@/app/ui/sessionhub-logo';
 import { PowerIcon } from '@heroicons/react/24/outline';
 
 export default function SideNav() {

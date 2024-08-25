@@ -1,4 +1,4 @@
-import TradeHubLogo from '@/app/ui/tradehub-logo';
+import TradeHubLogo from '@/app/ui/sessionhub-logo';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './ui/home.module.css';
@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen flex-col bg-black p-6">
       <div className={style.gradient}>
-        <div className="flex h-20 shrink-0 items-end rounded-lg p-4 md:h-52">
+        <div className="flex h-20 shrink-0 items-end rounded-lg p-4 md:h-64">
           <TradeHubLogo />
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function Page() {
             <span>Log in</span>
           </Link>
         </div>
-        <div className="flex items-center justify-center p-6 md:w-[52%] md:px-28 md:py-12">
+        <div className="flex items-center justify-center p-6 md:w-[52%] ">
           <Image
             src="/sessionhub-darkdesktop.png"
             width={858}
