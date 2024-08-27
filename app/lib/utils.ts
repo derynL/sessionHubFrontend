@@ -1,26 +1,26 @@
 import { Income } from './definitions';
 
 /**
- * Formats a given amount in cents into a currency string (USD).
+ * Formats a given amount in cents into a currency string (GBP).
  * @param {number} amount - The amount to be formatted.
  * @returns {string} The formatted currency string.
  */
 export const formatCurrency = (amount: number) => {
-  return (amount / 100).toLocaleString('en-US', {
+  return (amount / 100).toLocaleString('en-GB', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'GBP',
   });
 };
 
 /**
  * Formats a date string to a localized date format.
  * @param {string} dateStr - The date string to be formatted.
- * @param {string} locale - The locale to be used for formatting (default is 'en-US').
+ * @param {string} locale - The locale to be used for formatting (default is 'en-GB').
  * @returns {string} The formatted date string.
  */
 export const formatDateToLocal = (
   dateStr: string,
-  locale: string = 'en-US',
+  locale: string = 'en-GB',
 ) => {
   const date = new Date(dateStr);
   const options: Intl.DateTimeFormatOptions = {
