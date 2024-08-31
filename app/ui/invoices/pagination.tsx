@@ -1,20 +1,26 @@
 'use client';
-
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { generatePagination } from '@/app/lib/utils';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
-  // Attention! Uncomment this section when you reach this stage in the course.
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get('page')) || 1;
+  const createPageURL = (pageNumber: number) => {
+    const params = new URLSearchParams(Array.from(searchParams.entries()));
+    params.set('page', pageNumber.toString());
+    return `${pathname}?${params.toString()}`;
+  };
 
-  // const allPages = generatePagination(currentPage, totalPages);
+  const allPages = generatePagination(currentPage, totalPages);
 
   return (
     <>
-      {/* Attention! Uncomment this section when you reach this stage in the course. */}
-
-      {/* <div className="inline-flex">
+      Attention! Uncomment this section when you reach this stage in the course.
+      <div className="inline-flex">
         <PaginationArrow
           direction="left"
           href={createPageURL(currentPage - 1)}
@@ -47,7 +53,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           href={createPageURL(currentPage + 1)}
           isDisabled={currentPage >= totalPages}
         />
-      </div> */}
+      </div>
     </>
   );
 }
