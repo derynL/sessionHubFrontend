@@ -19,7 +19,6 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
   return (
     <>
-      Attention! Uncomment this section when you reach this stage in the course.
       <div className="inline-flex">
         <PaginationArrow
           direction="left"
