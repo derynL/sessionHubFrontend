@@ -17,7 +17,7 @@ export type Invoice = {
   seller: string;
   amount: number;
   date: string;
-  status: 'awaiting' | 'fulfilled';
+  status: 'pending' | 'fulfilled';
 };
 
 export type Income = {
@@ -45,7 +45,7 @@ export type InvoicesTable = {
   image_url: string;
   date: string;
   amount: number;
-  status: 'awaiting' | 'fulfilled';
+  status: 'pending' | 'fulfilled';
 };
 
 export type SellersTableType = {
@@ -54,7 +54,7 @@ export type SellersTableType = {
   email: string;
   image_url: string;
   total_invoices: number;
-  total_awaiting: number;
+  total_pending: number;
   total_fulfilled: number;
 };
 
@@ -64,7 +64,7 @@ export type FormattedSellersTable = {
   email: string;
   image_url: string;
   total_invoices: number;
-  total_awaiting: string;
+  total_pending: string;
   total_fulfilled: string;
 };
 
@@ -77,5 +77,5 @@ export type InvoiceForm = {
   id: string;
   seller_id: string;
   amount: number;
-  status: 'awaiting' | 'fulfilled';
+  status: 'pending' | 'fulfilled';
 };

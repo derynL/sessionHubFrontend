@@ -7,14 +7,14 @@ export default function InvoiceStatus({ status }: { status: string }) {
       className={clsx(
         'text-m inline-flex items-center rounded-full px-2 py-1',
         {
-          'bg-red-600 text-white': status === 'awaiting',
+          'bg-red-600 text-white': status === 'pending',
           'bg-lime-400 text-sky-700': status === 'fulfilled',
         },
       )}
     >
-      {status === 'awaiting' ? (
+      {status === 'pending' ? (
         <>
-          Awaiting
+          Pending
           <ClockIcon className="ml-1 w-5 text-white" />
         </>
       ) : null}

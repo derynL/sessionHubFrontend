@@ -74,13 +74,13 @@ const invoices = [
   {
     seller_id: sellers[0].id,
     amount: 324,
-    status: 'awaiting',
+    status: 'pending',
     date: '2022-12-06',
   },
   {
     seller_id: sellers[1].id,
     amount: 5152,
-    status: 'awaiting',
+    status: 'pending',
     date: '2022-11-14',
   },
   {
@@ -98,19 +98,19 @@ const invoices = [
   {
     seller_id: sellers[5].id,
     amount: 67373,
-    status: 'awaiting',
+    status: 'pending',
     date: '2023-08-05',
   },
   {
     seller_id: sellers[7].id,
     amount: 1222,
-    status: 'awaiting',
+    status: 'pending',
     date: '2023-07-16',
   },
   {
     seller_id: sellers[6].id,
     amount: 5500,
-    status: 'awaiting',
+    status: 'pending',
     date: '2023-06-27',
   },
   {

@@ -8,7 +8,7 @@ const FormSchema = z.object({
   id: z.string(),
   sellerId: z.string(),
   amount: z.coerce.number(),
-  status: z.enum(['awaiting', 'fulfilled']),
+  status: z.enum(['pending', 'fulfilled']),
   date: z.string(),
 });
 
@@ -31,6 +31,7 @@ export async function createInvoice(formData: FormData) {
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
 }
+
 export async function updateInvoice(id: string, formData: FormData) {
   const { sellerId, amount, status } = UpdateInvoice.parse({
     sellerId: formData.get('sellerId'),
@@ -48,4 +49,9 @@ export async function updateInvoice(id: string, formData: FormData) {
 
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
+}
+
+export async function deleteInvoice(id: string) {
+  await sql`DELETE FROM invoices WHERE id = ${id}`;
+  revalidatePath('/dashboard/invoices');
 }

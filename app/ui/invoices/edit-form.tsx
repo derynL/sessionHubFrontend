@@ -81,18 +81,18 @@ export default function EditInvoiceForm({
             <div className="flex gap-4">
               <div className="flex items-center">
                 <input
-                  id="awaiting"
+                  id="pending"
                   name="status"
                   type="radio"
-                  value="awaiting"
-                  defaultChecked={invoice.status === 'awaiting'}
+                  value="pending"
+                  defaultChecked={invoice.status === 'pending'}
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
-                  htmlFor="awaiting"
+                  htmlFor="pending"
                   className=" ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-red-600 px-3 py-1.5 text-xs font-medium text-white"
                 >
-                  Awaiting <ClockIcon className="h-4 w-4" />
+                  Pending <ClockIcon className="h-4 w-4" />
                 </label>
               </div>
               <div className="flex items-center">
@@ -122,7 +122,7 @@ export default function EditInvoiceForm({
         >
           Cancel
         </Link>
-        <Button type="submit">Edit Invoice</Button>
+        <Button type="submit">Update Invoice</Button>
       </div>
     </form>
   );

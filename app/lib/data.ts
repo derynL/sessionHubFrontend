@@ -66,7 +66,7 @@ export async function fetchCardData() {
     const sellerCountPromise = sql`SELECT COUNT(*) FROM sellers`;
     const invoiceStatusPromise = sql`SELECT
          SUM(CASE WHEN status = 'fulfilled' THEN amount ELSE 0 END) AS "fulfilled",
-         SUM(CASE WHEN status = 'awaiting' THEN amount ELSE 0 END) AS "awaiting"
+         SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
 
     const data = await Promise.all([
@@ -80,15 +80,13 @@ export async function fetchCardData() {
     const totalFulfilledInvoices = formatCurrency(
       data[2].rows[0].fulfilled ?? '0',
     );
-    const totalAwaitingInvoices = formatCurrency(
-      data[2].rows[0].awaiting ?? '0',
-    );
+    const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? '0');
 
     return {
       numberOfSellers,
       numberOfInvoices,
       totalFulfilledInvoices,
-      totalAwaitingInvoices,
+      totalPendingInvoices,
     };
   } catch (error) {
     console.error('Database Error:', error);
@@ -235,7 +233,7 @@ export async function fetchFilteredSellers(query: string) {
 		  sellers.email,
 		  sellers.image_url,
 		  COUNT(invoices.id) AS total_invoices,
-		  SUM(CASE WHEN invoices.status = 'awaiting' THEN invoices.amount ELSE 0 END) AS total_awaiting,
+		  SUM(CASE WHEN invoices.status = 'pending' THEN invoices.amount ELSE 0 END) AS total_pending,
 		  SUM(CASE WHEN invoices.status = 'fulfilled' THEN invoices.amount ELSE 0 END) AS total_fulfilled
 		FROM sellers
 		LEFT JOIN invoices ON sellers.id = invoices.seller_id
@@ -248,7 +246,7 @@ export async function fetchFilteredSellers(query: string) {
 
     const sellers = data.rows.map((seller) => ({
       ...seller,
-      total_awaiting: formatCurrency(seller.total_awaiting),
+      total_pending: formatCurrency(seller.total_pending),
       total_fulfilled: formatCurrency(seller.total_fulfilled),
     }));
 
