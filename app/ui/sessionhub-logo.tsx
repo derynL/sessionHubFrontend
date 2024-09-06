@@ -5,9 +5,7 @@ import css from './home.module.css';
 
 export default function SessionHubLogo() {
   return (
-    <div
-      className={`${rubik.className} flex flex-row items-center align-bottom`}
-    >
+    <div className={`${rubik.className} flex flex-row align-bottom`}>
       <div className="hidden md:block">
         <Image
           src="/sh-icon-4x6.png"
